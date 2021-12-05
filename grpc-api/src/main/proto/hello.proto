@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+//Java文件生成路径
+option java_package = "com.example.grpc.api";
+
+//默认等于proto文件名
+option java_outer_classname = "HelloGrpcProto";
+
+//定义服务请求的实体传参
+message User {
+    string name = 1;
+}
+
+//定义服务响应实体
+message HelloMessage {
+    string msg = 1;
+}
+
+service Hello {
+    rpc SayHello(User) returns (HelloMessage);
+}
